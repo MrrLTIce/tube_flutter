@@ -1,0 +1,4 @@
+com.example.youtube_flutter_demo
+drawable launch_background
+mipmap ic_launcher
+style LaunchTheme

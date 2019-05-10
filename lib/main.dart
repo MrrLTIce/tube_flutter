@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:youtube_flutter_demo/home.dart';
 import 'package:youtube_flutter_demo/testlayout.dart';
 
+import 'homeditial.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: HomeDetial(),
     );
   }
 }

@@ -1,6 +1,7 @@
 #Internal package file, do not edit.
-#Fri May 10 08:37:27 ICT 2019
+#Fri May 10 17:05:36 ICT 2019
 4.path=flutter_assets/LICENSE
+13.baseType=DIRECTORY
 8.set=ASSET
 6.path=classes.dex
 0.baseType=DIRECTORY
@@ -8,13 +9,14 @@
 5.baseType=DIRECTORY
 1.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/transforms/mergeJniLibs/debug/0
 8.path=flutter_assets/images/god.jpg
-12.path=lib/x86/libflutter.so
+12.path=flutter_assets/images/arrow.png
 3.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 4.set=ASSET
 5.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 7.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/transforms/mergeJniLibs/debug/0
 11.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 9.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
+13.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/transforms/mergeJniLibs/debug/0
 1.baseType=DIRECTORY
 11.set=ASSET
 0.set=ASSET
@@ -34,22 +36,24 @@
 9.path=flutter_assets/AssetManifest.json
 6.set=DEX
 2.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
+13.path=lib/x86/libflutter.so
 11.baseType=DIRECTORY
 4.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 3.baseType=DIRECTORY
 6.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/transforms/dexMerger/debug/0
 10.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
+13.set=NATIVE_RESOURCE
 8.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 2.set=ASSET
 8.baseType=DIRECTORY
-12.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/transforms/mergeJniLibs/debug/0
+12.base=/Users/mac/Desktop/project flutter/youtube_flu/build/app/intermediates/merged_assets/debug/mergeDebugAssets/out
 9.set=ASSET
-count=13
+count=14
 12.baseType=DIRECTORY
 4.baseType=DIRECTORY
 5.set=ASSET
 9.baseType=DIRECTORY
 0.path=flutter_assets/isolate_snapshot_data
-12.set=NATIVE_RESOURCE
+12.set=ASSET
 1.set=NATIVE_RESOURCE
 2.path=flutter_assets/fonts/MaterialIcons-Regular.ttf
