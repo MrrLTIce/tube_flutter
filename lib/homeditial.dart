@@ -7,46 +7,71 @@ class HomeDetial extends StatefulWidget {
 }
 
 class _State extends State<HomeDetial> {
-
   VideoPlayerController _controller;
   Future<void> _initializeVideoPlayerFuture;
 
-@override
+  @override
   void initState() {
     // TODO: implement initState
-     _controller = VideoPlayerController.network(
-    'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = VideoPlayerController.network(
+      'https://www.youtube.com/watch?v=d_m5csmrf7I',
     );
 
     _initializeVideoPlayerFuture = _controller.initialize();
+    _controller.setLooping(true);
     super.initState();
-     
   }
+
   @override
   void dispose() {
     // TODO: implement dispose
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('VideoPlay'),
-      ),
-      body: Column(children: <Widget>[
-        Container(child: fetchVideoPlay(),height: 200,),
-        Expanded(child: Padding(
-          child: fetchNextVideoPlay(),
-          padding: EdgeInsets.only(top: 6),),
-        flex: 1,
+        body: Column(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+          child: fetchVideoPlay(),
+          width: MediaQuery.of(context).size.width,
+          height: 200,
         ),
-
-      ],)
-    );
+        Container(
+          
+          color: Colors.black,
+          child: IconButton(
+            icon: Icon(
+              _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+            ),
+            onPressed: () {
+              setState(() {
+                // If the video is playing, pause it.
+                if (_controller.value.isPlaying) {
+                  _controller.pause();
+                } else {
+                  // If the video is paused, play it
+                  _controller.play();
+                }
+              });
+            },
+          ),
+        ),
+        
+        Expanded(
+          child: ListView(
+            children: <Widget>[fetchVideoInfo(), fetchNextVideoPlay()],
+          ),
+        ),
+      ],
+    ));
   }
-  fetchVideoPlay() {
-      // Use a FutureBuilder to display a loading spinner while you wait for the
+
+  Widget fetchVideoPlay() {
+    // Use a FutureBuilder to display a loading spinner while you wait for the
 // VideoPlayerController to finish initializing.
     return FutureBuilder(
       future: _initializeVideoPlayerFuture,
@@ -67,27 +92,40 @@ class _State extends State<HomeDetial> {
       },
     );
   }
-  fetchNextVideoPlay() {
+
+  Widget fetchVideoInfo() {
+    return ListTile(
+      // trailing: Icon(Icons.more_vert),
+      title: Text('Hello borther welcome'),
+      subtitle: Text('50 M'),
+    );
+  }
+
+  Widget fetchNextVideoPlay() {
     return ListView.builder(
-        itemCount: 10,
-        itemBuilder: ((BuildContext context,int position){
-          return Container(
-            height: 100,
-            child: Card( 
-              child: Padding(
-              padding: EdgeInsets.only(left:8,top: 4),
-              child: Column(children: <Widget>[
+      itemCount: 10,
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      itemBuilder: ((BuildContext context, int position) {
+        return Container(
+          height: 100,
+          child: Card(
+            child: Padding(
+              padding: EdgeInsets.only(left: 8, top: 4),
+              child: Column(
+                children: <Widget>[
                   const ListTile(
                     leading: Icon(Icons.album),
                     title: Text('The Enchanted Nightingale'),
-                    subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+                    subtitle:
+                        Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
                   ),
-                ],) ,
-              ) 
-            ,),
-          );
-        }),
+                ],
+              ),
+            ),
+          ),
+        );
+      }),
     );
   }
-  
 }
